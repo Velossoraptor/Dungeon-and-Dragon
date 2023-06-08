@@ -8,9 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player extends Actor
 {
-    int deltaX = 0;
-    int deltaY = 0;
-    int speed = 5;
+    private int deltaX = 0;
+    private int deltaY = 0;
+    private int speed = 5;
+    private int health = 10;
+    private int damage = 1;
     
     
     public void act()
@@ -35,5 +37,16 @@ public class Player extends Actor
         setLocation(getX() + deltaX, getY() + deltaY);
         deltaX = 0;
         deltaY = 0;
+    }
+    
+    public int getHealth(){
+        return this.health;
+    }
+    public void damage(){
+        health--;
+    }
+    
+    public void equipped(){
+        //should get equipped item and buff accordingly
     }
 }
