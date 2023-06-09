@@ -7,32 +7,35 @@
 public class Item  
 {
     // instance variables - replace the example below with your own
-    private Item nextItem;
-    private Item prevItem;
+    private Item next;
+    private Item prev;
+    private int buff;
 
     /* adjust all this for Item class as node, and inventory as list
-    public Object value() {
-        return this.value;
-    }
-
     public void setValue(Object newValue){
         this.value = newValue;
     }
+    */
+   
+    public int buff() {
+        return this.buff;
+    }
 
-    public Node previous() {
+
+    public Item previous() {
         return this.prev;
     }
 
-    public void setPrevious(Node node) {
-        this.prev = node;
+    public void setPrevious(Item item) {
+        this.prev = item;
     }
 
-    public Node next() {
+    public Item next() {
         return this.next;
     }
 
-    public void setNext(Node node) {
-        this.next = node;
+    public void setNext(Item item) {
+        this.next = item;
     }
-    */
+    
 }
