@@ -6,8 +6,7 @@
  */
 public class Sword extends Item 
 {
-    // instance variables - replace the example below with your own
-    private Item nextItem;
-    private Item prevItem;
-    private int attackBuff = 4;
+    private Item next;
+    private Item prev;
+    private int buff = 4;
 }
