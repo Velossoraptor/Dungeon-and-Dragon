@@ -1,5 +1,4 @@
 #Greenfoot project file
-
 dependency1.from=MyWorld
 dependency1.to=Player
 dependency1.type=UsesDependency
@@ -14,16 +13,6 @@ height=1013
 package.numDependencies=2
 package.numTargets=5
 project.charset=UTF-8
-
-editor.fx.0.height=739
-editor.fx.0.width=816
-editor.fx.0.x=149
-editor.fx.0.y=64
-height=1000
-package.numDependencies=0
-package.numTargets=2
-project.charset=windows-1252
-
 publish.hasSource=false
 publish.locked=true
 publish.longDesc=
@@ -33,10 +22,24 @@ publish.title=
 publish.url=
 readme.height=60
 readme.name=@README
-readme.width=49
+readme.width=48
 readme.x=10
 readme.y=10
 simulation.speed=50
+target1.height=70
+target1.name=Item
+target1.showInterface=false
+target1.type=ClassTarget
+target1.width=120
+target1.x=0
+target1.y=0
+target2.height=70
+target2.name=Player
+target2.showInterface=false
+target2.type=ClassTarget
+target2.width=120
+target2.x=0
+target2.y=0
 target3.height=70
 target3.name=Sword
 target3.showInterface=false
@@ -60,8 +63,6 @@ target5.x=0
 target5.y=0
 version=3.0.0
 width=1425
-version=3.0.0
-width=1296
 world.lastInstantiated=MyWorld
 xPosition=0
 yPosition=0

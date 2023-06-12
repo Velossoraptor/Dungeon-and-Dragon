@@ -30,7 +30,7 @@ public class Inventory  //make it a linked list, items are the nodes
             this.backItem.setNext(item); 
         }
         
-        // Make this node the new back node.
+        // Make this item the new back item.
         this.backItem = item;
 
         // Update size.
@@ -54,7 +54,7 @@ public class Inventory  //make it a linked list, items are the nodes
             currentItem = currentItem.next();
             i++;
         }
-        //giving me an issue
+
         Item nextItem = currentItem.next();
         Item prevItem = currentItem.previous();
         if(prevItem!=null ){
@@ -74,5 +74,30 @@ public class Inventory  //make it a linked list, items are the nodes
 
 
         this.size--;
+    }
+    
+    public String get(int index) {
+        if (this.size == 0) {
+            throw new UnsupportedOperationException("List is empty.");
+        }
+
+        if (index < 0 || index >= this.size)
+            throw new IndexOutOfBoundsException(index);
+        
+        // Starting from front item, repeatedly get the next item index-1 times.
+        Item currentItem = this.frontItem;
+        int i = 0;
+        while (i < index) {
+            currentItem = currentItem.next();
+            i++;
+        }
+        // Could make this into a for-loop instead. Or put into a private getItem(int) method that returns Item.
+
+ 
+        return currentItem.name();
+    }
+    
+    public Item current(){
+        return this.frontItem;
     }
 }

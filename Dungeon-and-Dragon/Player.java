@@ -11,13 +11,15 @@ public class Player extends Actor
     private int deltaX = 0;
     private int deltaY = 0;
     private int speed = 5;
-    private int health = 10;
+    private int health = 60;
     private int damage = 1;
+    private Inventory inventory;
     
     
     public void act()
     {
         movePlayer();
+
     }
     
     public void movePlayer(){
@@ -42,11 +44,19 @@ public class Player extends Actor
     public int getHealth(){
         return this.health;
     }
+    
     public void damage(){
         health--;
     }
     
     public void equipped(){
-        //should get equipped item and buff accordingly
+        int plusBuff = inventory.current().buff();
+        this.damage+= plusBuff;
+    }
+    
+    public void attack(Guards guard){
+        if(this.getX() - guard.getX() <= 10 || this.getY() - guard.getY() <=10){
+            //TODO 
+        }
     }
 }

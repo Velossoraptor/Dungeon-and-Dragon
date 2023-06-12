@@ -10,15 +10,23 @@ public class Item
     private Item next;
     private Item prev;
     private int buff;
+    private String name;
 
     /* adjust all this for Item class as node, and inventory as list
     public void setValue(Object newValue){
         this.value = newValue;
     }
     */
+   public void act(){
+
+   }
    
     public int buff() {
         return this.buff;
+    }
+    
+    public String name(){
+        return this.name;
     }
 
 
