@@ -48,6 +48,8 @@ public class Guards extends Actor
             
       //  }
       
+      
+      
         if (health == 0){
             guards = false;
         }
