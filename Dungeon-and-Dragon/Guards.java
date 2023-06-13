@@ -15,15 +15,41 @@ public class Guards extends Actor
     public void act(){
         boolean guards = true;
         int health = 10;
+        int deltaX = 5;
+        int deltaY = 5;
+        boolean goingDown = true;
 
         if (guards == true){
-            setLocation(getX(), getY() + 10);
+            //setLocation(getX(), getY() + 10);
+            if(goingDown){
+                setLocation(getX(), getY() + 10);
+                if (getY() >= getWorld().getHeight() - 10){
+                    goingDown = false;
+                
+                }
+            }
+            if(!goingDown){
+                setLocation(getX(), getY() - 10);
+                if (getY() < 10){
+                    goingDown = true;
+                    
+                }
+            }
+            
+        
            
             
         }
-        if (getY() > getWorld().getHeight() - 10)
-        {
-        }
+        
+        
+      //  if (getX() < 10)
+      //  {
+       //     deltaX = 5;
+            
+      //  }
+      
+      
+      
         if (health == 0){
             guards = false;
         }
