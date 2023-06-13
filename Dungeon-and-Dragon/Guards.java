@@ -18,25 +18,26 @@ public class Guards extends Actor
         int deltaX = 5;
         int deltaY = 5;
         boolean goingDown = true;
-
+        
         if (guards == true){
             //setLocation(getX(), getY() + 10);
-            if(goingDown){
+            
+            if(goingDown == true){
                 setLocation(getX(), getY() + 10);
                 if (getY() >= getWorld().getHeight() - 10){
                     goingDown = false;
                 
                 }
             }
-            if(!goingDown){
+            else if(goingDown == false){
                 setLocation(getX(), getY() - 10);
-                if (getY() < 10){
+                if (getY() < getWorld().getHeight() + 10){
                     goingDown = true;
                     
                 }
             }
             
-        
+        // >= getWorld().getHeight() - 10
            
             
         }
