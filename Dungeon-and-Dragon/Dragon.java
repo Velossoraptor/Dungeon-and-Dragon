@@ -16,14 +16,15 @@ public class Dragon extends Actor
     {
         boolean dragon = true;
         int health = 15;
-        int deltaX = 5;
-        int deltaY = 5;
+        int deltaX = 0;
+        int deltaY = 0;
        
         
-        java.util.List<Player> playerInLevel = getWorld().getObjects(Player.class);
-        setLocation(getWorld().getObjects(Player.class).getX, getWorld().getObjects(Player.class).getY);
+        //java.util.List<Player> playerInLevel = getWorld().getObjects(Player.class);
+        setLocation(getObjects(Player.class).getX(), getObjects(Player.class).getY());
        // if (!playerInLevel.isEmpty()) {
        //     setLocation(getWorld(Player()).getX(), Player.getY());
        // }
+       //getWorld(MyWorld).
     }
 }

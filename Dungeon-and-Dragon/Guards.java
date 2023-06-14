@@ -8,55 +8,48 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Guards extends Actor
 {
+     boolean guards = true;
+     int health = 10;
+     int deltaX = 0;
+     int deltaY = 0;
+     boolean goingDown = true;
     /**
      * Act - do whatever the Guards wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act(){
-        boolean guards = true;
-        int health = 10;
-        int deltaX = 5;
-        int deltaY = 5;
-        boolean goingDown = true;
+       
         
-        if (guards == true){
-            //setLocation(getX(), getY() + 10);
-            
-            if(goingDown == true){
-                setLocation(getX(), getY() + 10);
-                if (getY() >= getWorld().getHeight() - 10){
-                    goingDown = false;
-                
-                }
-            }
-            else if(goingDown == false){
-                setLocation(getX(), getY() - 10);
-                if (getY() < getWorld().getHeight() + 10){
-                    goingDown = true;
-                    
-                }
-            }
+        guardMove(goingDown, guards);
+        
             
         // >= getWorld().getHeight() - 10
            
             
         }
-        
-        
-      //  if (getX() < 10)
-      //  {
-       //     deltaX = 5;
-            
-      //  }
-      
-      
-      
-        if (health == 0){
-            guards = false;
-        }
-        else if (health != 0){
-            guards = true;
-        }
+        public boolean guardMove(boolean goingDown, boolean guards){
 
-    }
+  if(goingDown){
+                
+                if (getY() >= getWorld().getHeight() - 10){
+                
+                goingDown = false;                
+                }
+                //setLocation(getX(), getY() + 10);
+                deltaY = 5;
+            }
+  else if(!goingDown){
+                
+                if (getY() < getWorld().getHeight() + 10){
+                    
+                    goingDown = true;
+                }
+                //setLocation(getX(), getY() - 10);
+                deltaY = -5;
+            }
+    
+    setLocation(getX()+deltaX, getY()+deltaY);
+    return goingDown;
 }
+}
+
