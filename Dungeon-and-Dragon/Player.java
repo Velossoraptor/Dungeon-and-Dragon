@@ -55,8 +55,16 @@ public class Player extends Actor
     }
     
     public void attack(Guards guard){
+        //Should attach this to Guard and Dragon with player as a parameter and detect if "this"  is clicked
+        //then if player is close enough have it get the players buff and subtract from health
+        /*
+        if(Greenfoot.mouseClicked(Guards.class)||Greenfoot.mouseClicked(Dragon.class)){
+            Actor target = Greenfoot.mouseClicked();
+            
+        }
         if(this.getX() - guard.getX() <= 10 || this.getY() - guard.getY() <=10){
             //TODO 
         }
+        */
     }
 }
