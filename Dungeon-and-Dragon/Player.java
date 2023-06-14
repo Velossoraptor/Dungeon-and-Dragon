@@ -14,6 +14,7 @@ public class Player extends Actor
     private int health = 60;
     private int damage = 1;
     private Inventory inventory;
+    int lastKey = 0;
     
     
     public void act()
@@ -23,22 +24,49 @@ public class Player extends Actor
     }
     
     public void movePlayer(){
-        if(Greenfoot.isKeyDown("w")){
-            deltaY = -speed;
+        boolean touchingWall = this.isTouching(Wall.class)||this.isTouching(Wall2.class) || this.isTouching(Pillar.class);
+        
+        //Actor barrier = this.isTouching;
+        if(!touchingWall){
+            if(Greenfoot.isKeyDown("w")){
+                deltaY = -speed;
+                lastKey = 1;
+            }
+            if(Greenfoot.isKeyDown("a")){
+                deltaX = -speed;
+                lastKey = 2;
+            }
+            if(Greenfoot.isKeyDown("s")){
+                deltaY = speed;
+                lastKey = 3;
+            }
+            if(Greenfoot.isKeyDown("d")){
+                deltaX = speed;
+                lastKey = 4;
+            } 
+        }else{
+            //if(touchingWall){
+                if(lastKey==1){
+                    deltaY = speed;
+                }
+                if(lastKey==2){
+                    deltaX = speed;
+                }
+                if(lastKey==3){
+                    deltaY = -speed;
+                }
+                if(lastKey==4){
+                    deltaX = -speed;
+                } 
+            //}
         }
-        if(Greenfoot.isKeyDown("a")){
-            deltaX = -speed;
-        }
-        if(Greenfoot.isKeyDown("s")){
-            deltaY = speed;
-        }
-        if(Greenfoot.isKeyDown("d")){
-            deltaX = speed;
-        }
+
         
         setLocation(getX() + deltaX, getY() + deltaY);
         deltaX = 0;
         deltaY = 0;
+        
+        
     }
     
     public int getHealth(){
