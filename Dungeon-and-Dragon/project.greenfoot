@@ -1,4 +1,5 @@
 #Greenfoot project file
+
 dependency1.from=MyWorld
 dependency1.to=Player
 dependency1.type=UsesDependency
@@ -110,3 +111,4 @@ width=1425
 world.lastInstantiated=MyWorld
 xPosition=0
 yPosition=0
+
