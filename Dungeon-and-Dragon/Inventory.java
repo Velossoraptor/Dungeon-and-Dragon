@@ -1,15 +1,29 @@
+import greenfoot.*;
+
 /**
  * Write a description of class Inventory here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Inventory  //make it a linked list, items are the nodes
+public class Inventory extends Actor  //make it a linked list, items are the nodes
 {
      private Item frontItem;
      private Item backItem;
      private int size;
      private int maxSize = 4;
+     
+     public void act(){
+         GreenfootImage img = getImage(); 
+         img.clear(); 
+         img.setColor(Color.RED);
+         img.drawRect(0,0,200,200);
+         img.fillRect(0,0,200,200);
+         img.scale(175,75);
+         setImage(img);
+         
+         
+     }
      
      public Inventory(){
          this.frontItem = null;
