@@ -14,7 +14,8 @@ public class Player extends Actor
     private int health = 60;
     private int damage = 1;
     private Inventory inventory;
-    int lastKey = 0;
+    private int lastKey = 0;
+    private int currentWorld = 1;
 
     public void act()
     {
@@ -87,7 +88,14 @@ public class Player extends Actor
 
     public void nextLevel(){
         if(this.getX() >=getWorld().getWidth()-15){
-            Greenfoot.setWorld(new Level2(getWorld()));
+            if(currentWorld == 1){
+                Greenfoot.setWorld(new Level2(getWorld()));
+                currentWorld++;
+            }else if (currentWorld ==2){
+                Greenfoot.setWorld(new Level3(getWorld()));
+                currentWorld++;
+            }
+            
         }
     }
 }
