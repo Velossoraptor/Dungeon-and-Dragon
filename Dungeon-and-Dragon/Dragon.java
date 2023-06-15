@@ -23,7 +23,7 @@ public class Dragon extends Actor
         java.util.List<Player> playerInLevel = getWorld().getObjects(Player.class);
         if (!playerInLevel.isEmpty()){
             Player player = playerInLevel.get(0);
-            moveToPlayer(player);
+            //moveToPlayer(player);
         }
     }
 }
