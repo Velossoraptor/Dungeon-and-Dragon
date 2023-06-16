@@ -66,9 +66,9 @@ public class Guards extends Actor
         
 }
 public void playerAttack(){
-        if(player.getX() <= player.speed*2){
+        if(getWorldOfType(Level2.class).getPlayer().getX() <= 10){ //getPlayer() should be defined, I'm not sure whats going on...
             if(Greenfoot.mouseClicked(this)){
-                this.health-=player.damage;
+                this.health-=getWorldOfType(Level2.class).getPlayer().attack();
             }
         }
     }

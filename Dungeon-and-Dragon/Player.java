@@ -80,10 +80,8 @@ public class Player extends Actor
         this.damage+= plusBuff;
     }
 
-    public void attack(Guards guard){
-        if(this.getX() - guard.getX() <= 10 || this.getY() - guard.getY() <=10){
-            //TODO 
-        }
+    public int attack(){
+        return this.damage;
     }
 
     public void nextLevel(){
