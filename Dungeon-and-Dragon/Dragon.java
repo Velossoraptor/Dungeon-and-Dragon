@@ -26,12 +26,21 @@ public class Dragon extends Actor
         
     //java.util.List<Player> playerInLevel = getWorld().getObjects(Player.class);
         if (dragon == true){
-        //setLocation(getObjects(Player).getX(), getObjects(Player).getY());
+
+        if(this.getX() < Player.getX()){
+            deltaX = speed;
+        }
+        else if (this.getX() > Player.getX()){
+            deltaX = -speed;
+        }
+        if(this.getY() < Player.getY()){
+            deltaY = speed;
+        }
+        if(this.getY() > Player.getY()){
+            deltaY = -speed;
+        }
         
-       // if (!playerInLevel.isEmpty()) {
-       //     setLocation(getWorld(Player()).getX(), Player.getY());
-       // }
-       //getWorld(MyWorld).
+        
     }
     if (dragon == false){
         setLocation(0, 0);
