@@ -9,15 +9,18 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Level2 extends World
 {
     public Player player;
+    GreenfootImage Level2Image = new GreenfootImage("pixil-frame-0 (14).png");
     /**
      * Constructor for objects of class Level2.
      * 
      */
     public Level2(World source)
+    
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
 
         super(600, 400, 1); 
+        setBackground(Level2Image);
         player = ((MyWorld)source).getPlayer();
         addObject(player, 0, 200);
         addObject(new Guards(), 119, 30);
