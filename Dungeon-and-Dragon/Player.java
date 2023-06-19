@@ -11,7 +11,7 @@ public class Player extends Actor
     private int deltaX = 0;
     private int deltaY = 0;
     private int speed = 5;
-    private int health = 60;
+    private int health = 300;
     private int damage = 1;
     private Inventory inventory;
     private int lastKey = 0;
@@ -30,7 +30,9 @@ public class Player extends Actor
             getWorldOfType(MyWorld.class).setBg();
         }
         setImage(playerGif.getCurrentImage());
-        movePlayer();
+        if(health>0){
+           movePlayer(); 
+        }
         nextLevel();
 
     }
