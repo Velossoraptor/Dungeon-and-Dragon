@@ -9,13 +9,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Guards extends Actor
 {
     boolean guards = true;
-    int health = 10;
+    int health = 2;
     int deltaX = 0;
     int deltaY = 0;
     int speed = 1;
     boolean goingDown = true;
     GreenfootImage guardImage = new GreenfootImage("Guard.png");
-    
 
     /**
      * Act - do whatever the Guards wants to do. This method is called whenever
@@ -24,6 +23,29 @@ public class Guards extends Actor
     public void act(){
         guardImage.scale(70,70);
         setImage(guardImage);
+        if(health>0){
+            moveGuard();
+        }
+        hitPlayer();
+        playerAttack();
+        if (!guards){
+            setLocation(0, 0);
+        }
+
+        if (health <= 0){
+            guards = false;
+        }
+
+    }
+    public void playerAttack(){
+        if(getWorldOfType(Level2.class).getPlayer().getX() <= this.getX()+150 || getWorldOfType(Level2.class).getPlayer().getX() <= this.getX()-150){ 
+            if(Greenfoot.mouseClicked(this)){
+                this.health-= 1; //getWorldOfType(Level2.class).getPlayer().attack();
+            }
+        }
+    }
+
+    public void moveGuard(){
         if (guards == true){
             if(goingDown){
                 setLocation(getX() + deltaX, getY() + deltaY + 10);
@@ -51,25 +73,10 @@ public class Guards extends Actor
 
             // >= getWorld().getHeight() - 10
         } 
-        if (health == 0){
-            guards = false;
-        }
-        else if (health == 10){
-            guards = true;
-        }
-        else if (health < 10){
-            guards = true;
-        }
-
-        
-
-}
-public void playerAttack(){
-        if(getWorldOfType(Level2.class).getPlayer().getX() <= 10){ //getPlayer() should be defined, I'm not sure whats going on...
-
-            if(Greenfoot.mouseClicked(this)){
-                this.health-=getWorldOfType(Level2.class).getPlayer().attack();
-            }
+    }
+        public void hitPlayer(){
+        if(this.isTouching(Player.class)){
+            getWorldOfType(Level2.class).getPlayer().damage();
         }
     }
 }
