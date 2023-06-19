@@ -20,6 +20,9 @@ public class Level2 extends World
         super(600, 400, 1); 
         player = ((MyWorld)source).getPlayer();
         addObject(player, 0, 200);
+        addObject(new Guards(), 119, 30);
+        addObject(new Guards(), 381, 370);
+        addObject(new Guards(), 419, 30);
         generateMap();
     }
     public void generateMap(){

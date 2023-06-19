@@ -19,6 +19,7 @@ public class Level3 extends World
         super(600, 400, 1); 
         player = ((Level2)source).getPlayer();
         addObject(player, 0, 200);
+        addObject(new Dragon(), 300,200);
         generateMap();
     }
     public void generateMap(){

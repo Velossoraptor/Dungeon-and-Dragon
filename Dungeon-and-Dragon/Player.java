@@ -1,5 +1,5 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+ 
 /**
  * Write a description of class Player here.
  * 
@@ -16,9 +16,20 @@ public class Player extends Actor
     private Inventory inventory;
     private int lastKey = 0;
     private int currentWorld = 1;
+    GifImage playerGif = new GifImage("Player gif no bg.gif");
+    
+    public Player(){
+        //playerGif.scale(50,50);
+        
+    }
 
     public void act()
     {
+        playerGif.getCurrentImage().scale(70,70);
+        if(currentWorld == 1){
+            getWorldOfType(MyWorld.class).setBg();
+        }
+        setImage(playerGif.getCurrentImage());
         movePlayer();
         nextLevel();
 
