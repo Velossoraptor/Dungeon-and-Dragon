@@ -15,6 +15,7 @@ public class Guards extends Actor
     int speed = 1;
     boolean goingDown = true;
     GreenfootImage guardImage = new GreenfootImage("Guard.png");
+    GreenfootImage damage = new GreenfootImage("guardDamage.png");
 
     /**
      * Act - do whatever the Guards wants to do. This method is called whenever
@@ -40,6 +41,7 @@ public class Guards extends Actor
     public void playerAttack(){
         if(getWorldOfType(Level2.class).getPlayer().getX() <= this.getX()+150 || getWorldOfType(Level2.class).getPlayer().getX() <= this.getX()-150){ 
             if(Greenfoot.mouseClicked(this)){
+                setImage(damage);
                 this.health-= 1; //getWorldOfType(Level2.class).getPlayer().attack();
             }
         }

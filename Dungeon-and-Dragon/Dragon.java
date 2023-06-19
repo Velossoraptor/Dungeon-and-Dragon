@@ -10,11 +10,12 @@ public class Dragon extends Actor
 
 {
     boolean dragon = true;
-    int health = 15;
+    int health = 30;
     int deltaX = 0;
     int deltaY = 0;
     int speed = 1;
     GreenfootImage dragonImage = new GreenfootImage("Dragon.png");
+    GreenfootImage damage = new GreenfootImage("Dragond.png");
     /**
      * Act - do whatever the Dragon wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -80,6 +81,7 @@ public class Dragon extends Actor
         if(getWorldOfType(Level3.class).getPlayer().getX() <= this.getX()+300 ||getWorldOfType(Level3.class).getPlayer().getX() <= this.getX()-300){ 
 
             if(Greenfoot.mouseClicked(this)){
+                this.setImage(damage);
                 this.health-=getWorldOfType(Level3.class).getPlayer().attack();
             }
         }
