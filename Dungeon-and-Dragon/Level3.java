@@ -8,6 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Level3 extends World
 {
+    GreenfootImage level3Image = new GreenfootImage("Level3.png");
     public Player player;
     /**
      * Constructor for objects of class Level3.
@@ -17,6 +18,7 @@ public class Level3 extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
+        setBackground(level3Image);
         player = ((Level2)source).getPlayer();
         addObject(player, 0, 200);
         addObject(new Dragon(), 300,200);

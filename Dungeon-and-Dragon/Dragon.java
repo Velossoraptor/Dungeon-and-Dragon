@@ -28,6 +28,7 @@ public class Dragon extends Actor
         
         playerAttack();
         hitPlayer();
+        dragonDied();
         //java.util.List<Player> playerInLevel = getWorld().getObjects(Player.class);
 
         if (!dragon){
@@ -86,6 +87,11 @@ public class Dragon extends Actor
     public void hitPlayer(){
         if(this.isTouching(Player.class)){
             getWorldOfType(Level3.class).getPlayer().damage();
+        }
+    }
+    public void dragonDied(){
+        if(this.health <=0){
+            Greenfoot.setWorld(new Win());
         }
     }
 }
