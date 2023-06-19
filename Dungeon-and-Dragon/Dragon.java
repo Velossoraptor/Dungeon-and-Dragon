@@ -14,18 +14,19 @@ public class Dragon extends Actor
         int deltaX = 0;
         int deltaY = 0;
         int speed = 3;
+        GreenfootImage dragonImage = new GreenfootImage("Dragon.png");
     /**
      * Act - do whatever the Dragon wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        
+      setImage(dragonImage);  
        
         
     //java.util.List<Player> playerInLevel = getWorld().getObjects(Player.class);
         if (dragon == true){
-        setLocation(getObjects(Player).getX(), getObjects(Player).getY());
+        //setLocation(getObjects(Player).getX(), getObjects(Player).getY());
         
        // if (!playerInLevel.isEmpty()) {
        //     setLocation(getWorld(Player()).getX(), Player.getY());
