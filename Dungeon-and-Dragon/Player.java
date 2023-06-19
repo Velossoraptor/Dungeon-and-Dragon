@@ -34,6 +34,7 @@ public class Player extends Actor
            movePlayer(); 
         }
         nextLevel();
+        playerDied();
 
     }
 
@@ -107,6 +108,12 @@ public class Player extends Actor
                 currentWorld++;
             }
             
+        }
+    }
+    
+    public void playerDied(){
+        if(this.health <=0){
+            Greenfoot.setWorld(new Lose());
         }
     }
 }
